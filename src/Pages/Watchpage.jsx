@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import { useCart } from "../Components/CartContext";
 import "./mobilepage.css";
 import watchbanner from "../assets/watchbanner.png";
-import star from "../assets/star_icon.png";
-import star_dull_icon from "../assets/star_dull_icon.png";
+import star_icon from "../assets/star_icon.png";
+// import star_dull_icon from "../assets/star_dull_icon.png";
 
 const WatchPage = () => {
   const { allProduct = [], addToCart, url } = useCart();
   const [selectedModel, setSelectedModel] = useState([]);
 
-  // Filter only watches
   const watchData = useMemo(() => {
     return allProduct.filter((item) => {
       const cat = item.category?.toLowerCase().trim() || "";
@@ -42,7 +41,7 @@ const WatchPage = () => {
       <img className="bannerimage" src={watchbanner} alt="Watch Banner" />
 
       <div className="mobilepage-container">
-        {/* Sidebar */}
+      
         <div className="sidebar">
           <h3>Model</h3>
           {models.length === 0 && <p>No models found</p>}
@@ -64,7 +63,7 @@ const WatchPage = () => {
           )}
         </div>
 
-        {/* Products */}
+ 
         <div className="pageSection">
           {filteredWatch.length === 0 ? (
             <p>No watch products found</p>
@@ -91,7 +90,7 @@ const WatchPage = () => {
                   {[...Array(5)].map((_, i) => (
                     <img
                       key={i}
-                      src={i < (item.rating || 0) ? star : star_dull_icon}
+                      src={i < (item.rating || 0) ? star : star_icon}
                       alt="star"
                     />
                   ))}

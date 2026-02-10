@@ -19,7 +19,6 @@ const bagData = [
     image: bag1,
     price: 1299,
     category: "bags",
-    rating: 4,
     company: "LuxStyle",
     model: "SH-101",
     description: "Elegant handbag with premium leather finish, perfect for daily use.",
@@ -98,7 +97,7 @@ const bagData = [
     category: "bags",
     rating: 5,
     company: "EduGear",
-    model: "SB-808",
+    model: "c",
     description: "Durable backpack with ergonomic design for students and school use.",
   },
   {

@@ -10,20 +10,19 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [token, setToken] = useState("");
 
-  // ================= LOAD TOKEN =================
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) setToken(savedToken);
   }, []);
 
-  // ================= SAVE TOKEN =================
+ 
   useEffect(() => {
     if (token) {
       localStorage.setItem("token", token);
     }
   }, [token]);
 
-  // ================= FETCH PRODUCTS =================
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -39,7 +38,7 @@ export const CartProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
-  // ================= LOAD CART FROM BACKEND =================
+ 
   useEffect(() => {
     if (!token || allProduct.length === 0) return;
 
@@ -50,7 +49,7 @@ export const CartProvider = ({ children }) => {
         });
 
         if (res.data.success && res.data.cartData) {
-          const backendCart = res.data.cartData; // { productId: qty }
+          const backendCart = res.data.cartData; 
 
           const formattedCart = Object.keys(backendCart)
             .map((id) => {
@@ -71,12 +70,12 @@ export const CartProvider = ({ children }) => {
     loadCart();
   }, [token, allProduct]);
 
-  // ================= SAVE CART TO LOCAL =================
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // ================= ADD TO CART =================
+  
   const addToCart = async (product) => {
     if (!product || !product._id) return;
 
@@ -105,7 +104,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // ================= REMOVE FROM CART =================
+ 
   const removeFromCart = async (id) => {
     setCartItems((prev) =>
       prev
@@ -130,7 +129,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // ================= TOTAL AMOUNT =================
+ 
   const getTotalCartAmount = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,

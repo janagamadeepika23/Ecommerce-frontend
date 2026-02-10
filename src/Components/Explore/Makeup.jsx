@@ -7,26 +7,26 @@ import star_icon from "../../assets/star_icon.png";
 
 const normalize = (str) => str?.replace(/\s+/g, "").toLowerCase();
 
-const Jewellery = () => {
+const Makeup = () => {
   const { allProduct = [], addToCart, url } = useCart();
 
-  // Filter Jewellery products
-  const jewelleryProducts = useMemo(() => {
+ 
+  const makeupProducts = useMemo(() => {
     return allProduct
-      .filter((item) => normalize(item.category) === "jewellery")
+      .filter((item) => normalize(item.category) === "makeup")
       .slice(0, 12);
   }, [allProduct]);
 
   return (
     <div className="Container">
-      {jewelleryProducts.length === 0 && (
-        <p className="noProducts">No jewellery products found.</p>
+      {makeupProducts.length === 0 && (
+        <p className="noProducts">No makeup products found.</p>
       )}
 
       <div className="productsGrid">
-        {jewelleryProducts.map((item) => (
+        {makeupProducts.map((item) => (
           <div key={item._id || item.id} className="productCard">
-            <Link to={`/jewellery/${item._id || item.id}`}>
+            <Link to={`/makeup/${item._id || item.id}`}>
               <div className="productImageBox">
                 <img
                   loading="lazy"
@@ -35,7 +35,7 @@ const Jewellery = () => {
                       ? `${url}/images/${encodeURIComponent(item.image)}`
                       : "/placeholder.png"
                   }
-                  alt={item.model || item.product || "Jewellery"}
+                  alt={item.model || item.product || "Makeup"}
                   onError={(e) => {
                     e.target.src = "/placeholder.png";
                   }}
@@ -43,19 +43,18 @@ const Jewellery = () => {
               </div>
             </Link>
 
-          
-             <div className="itemModel">
-                <strong>Model:</strong> {item.model}
+        
+             <div className="producttype">
+               
+                <strong>type:</strong> {item.type}
               </div>
 
-
-          
 
             <div className="productRating">
               {[...Array(5)].map((_, i) => (
                 <img
                   key={i}
-                  src={i < (item.rating || 0) ? star : star_icon}
+                  src={i < (Number(item.rating) || 0) ? star :star_icon}
                   alt="star"
                 />
               ))}
@@ -69,6 +68,7 @@ const Jewellery = () => {
               <div className="itemDescription">
                 <strong>Description:</strong> {item.description}
               </div>
+         
             <button
               className="addToCartBtn"
               onClick={() => addToCart(item)}
@@ -83,4 +83,4 @@ const Jewellery = () => {
   );
 };
 
-export default Jewellery;
+export default Makeup;

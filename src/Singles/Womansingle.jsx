@@ -12,9 +12,7 @@ const Womansingle = () => {
   const [loading, setLoading] = useState(true);
   const [mainImg, setMainImg] = useState("/placeholder.png");
 
-  // =========================
-  // FIND PRODUCT BY _id
-  // =========================
+ 
   useEffect(() => {
     if (allProduct.length > 0) {
       const foundProduct = allProduct.find((item) => item._id.toString() === id.toString());
@@ -31,22 +29,16 @@ const Womansingle = () => {
     }
   }, [allProduct, id, url]);
 
-  // =========================
-  // LOADING / NOT FOUND
-  // =========================
+
   if (loading) return <h2 style={{ padding: "40px" }}>Loading Product...</h2>;
   if (!product) return <h2 style={{ padding: "40px" }}>Product Not Found</h2>;
 
-  // =========================
-  // IMAGE LIST (SAFE)
-  // =========================
+ 
   const images = product.images?.length
     ? product.images.map((img) => `${url}/images/${encodeURIComponent(img)}`)
     : [mainImg, mainImg, mainImg, mainImg];
 
-  // =========================
-  // STAR RENDERING
-  // =========================
+  
   const renderStars = (rating = 4) =>
     [...Array(5)].map((_, i) => (
       <img key={i} src={i < rating ? star : star_dull_icon} alt="star" />
@@ -54,7 +46,7 @@ const Womansingle = () => {
 
   return (
     <div className="productdisplay">
-      {/* LEFT SIDE - IMAGE GALLERY */}
+     
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
           {images.map((img, index) => (
@@ -73,7 +65,7 @@ const Womansingle = () => {
         </div>
       </div>
 
-      {/* RIGHT SIDE - DETAILS */}
+     
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
 <div className="productdisplay-short-description">{product.description}</div>

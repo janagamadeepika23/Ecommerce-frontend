@@ -1,4 +1,4 @@
-/* Container for all bag cards */
+
 .store-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -6,7 +6,6 @@
   padding: 1px;
 }
 
-/* Individual bag card */
 .store-card {
   background-color: #fff;
   border-radius: 12px;
@@ -21,7 +20,6 @@
   transform: translateY(-5px);
 }
 
-/* Image box */
 .store-image-box {
   width: 100%;
   height: 200px;
@@ -37,14 +35,14 @@
   object-fit: contain;
 }
 
-/* Details */
+
 .store-company,
 .store-model,
 .store-type,
 .store-description,
 .store-price,
 .store-rating {
-  /* padding: 8px 12px; */
+ 
   font-size: 16px;
   gap: 1px;
 }
@@ -56,7 +54,6 @@
   
 }
 
-/* Add to Cart button */
 .addToCartBtn {
   background-color: #ff6f61;
   color: #fff;
@@ -70,7 +67,7 @@
 .addToCartBtn:hover {
   background-color: #e65a50;
 }
-/* No products message */
+
 .store-no-products {
   padding: 20px;
   text-align: center;

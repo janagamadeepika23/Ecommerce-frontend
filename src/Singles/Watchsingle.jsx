@@ -12,15 +12,13 @@ const Watchsingle = () => {
   const [loading, setLoading] = useState(true);
   const [mainImg, setMainImg] = useState("/placeholder.png");
 
-  /* =========================
-     FIND WATCH FROM allProduct
-  ========================= */
+
   useEffect(() => {
     if (allProduct.length > 0) {
       const foundProduct = allProduct.find(
         (item) =>
           item._id.toString() === id.toString() &&
-          item.category?.toLowerCase().includes("watch") // ✅ changed from "tv" to "watch"
+          item.category?.toLowerCase().includes("watch") 
       );
 
       setProduct(foundProduct);
@@ -35,26 +33,20 @@ const Watchsingle = () => {
     }
   }, [allProduct, id, url]);
 
-  /* =========================
-     LOADING STATE
-  ========================= */
+
   if (loading) return <h2 style={{ padding: "40px" }}>Loading Watch...</h2>;
 
-  /* =========================
-     PRODUCT NOT FOUND
-  ========================= */
+
   if (!product) return <h2 style={{ padding: "40px" }}>Product Not Found</h2>;
 
-  /* =========================
-     IMAGE LIST (SAFE)
-  ========================= */
+ 
   const images = product.images?.length
     ? product.images.map((img) => `${url}/images/${encodeURIComponent(img)}`)
     : [mainImg, mainImg, mainImg, mainImg];
 
   return (
     <div className="productdisplay">
-      {/* LEFT */}
+     
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
           {images.map((img, index) => (
@@ -73,7 +65,7 @@ const Watchsingle = () => {
         </div>
       </div>
 
-      {/* RIGHT */}
+ 
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import star from "../assets/star_icon.png";
-import star_dull_icon from "../assets/star_dull_icon.png";
+import star_icon from "../assets/star_icon.png";
+// import star_dull_icon from "../assets/star_dull_icon.png";
 import { useCart } from "../Components/CartContext.jsx";
 
 const Furnituresingle = () => {
@@ -12,9 +12,7 @@ const Furnituresingle = () => {
   const [loading, setLoading] = useState(true);
   const [mainImg, setMainImg] = useState("");
 
-  /* =========================
-     FIND PRODUCT FROM API DATA
-  ========================= */
+
   useEffect(() => {
     if (allProduct.length > 0) {
       const foundBook = allProduct.find(
@@ -33,23 +31,16 @@ const Furnituresingle = () => {
     }
   }, [allProduct, id, url]);
 
-  /* =========================
-     LOADING STATE
-  ========================= */
+
   if (loading) {
     return <h2 style={{ padding: "40px" }}>Loading furniture...</h2>;
   }
 
-  /* =========================
-     NOT FOUND
-  ========================= */
+
   if (!product) {
     return <h2 style={{ padding: "40px" }}>Product Not Found</h2>;
   }
 
-  /* =========================
-     IMAGE LIST
-  ========================= */
   const images = product.images?.length
     ? product.images.map(
         (img) => `${url}/images/${encodeURIComponent(img)}`
@@ -93,7 +84,7 @@ const Furnituresingle = () => {
           {[...Array(5)].map((_, i) => (
             <img
               key={i}
-              src={i < (product.rating || 4) ? star : star_dull_icon}
+              src={i < (product.rating || 4) ? star : star_icon}
               alt="star"
             />
           ))}

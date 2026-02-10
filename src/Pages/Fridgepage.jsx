@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import { useCart } from "../Components/CartContext";
 import "./mobilepage.css";
 import fridgebanner from "../assets/fridgebanner.png";
-import star from "../assets/star_icon.png";
-import star_dull_icon from "../assets/star_dull_icon.png";
+import star_icon from "../assets/star_icon.png";
+// import star_dull_icon from "../assets/star_dull_icon.png";
 
 const Fridgepage = () => {
   const { allProduct = [], addToCart, url } = useCart();
   const [selectedBrand, setSelectedBrand] = useState([]);
 
-  // ✅ Only Fridge products
   const fridgeProducts = useMemo(() => {
     return allProduct.filter(
       (item) =>
@@ -19,7 +18,7 @@ const Fridgepage = () => {
     );
   }, [allProduct]);
 
-  // ✅ Unique brands
+ 
   const brands = useMemo(() => {
     return [
       ...new Set(
@@ -38,7 +37,6 @@ const Fridgepage = () => {
     );
   };
 
-  // ✅ Filtered fridges
   const filteredFridges =
     selectedBrand.length === 0
       ? fridgeProducts
@@ -55,7 +53,7 @@ const Fridgepage = () => {
       />
 
       <div className="mobilepage-container">
-        {/* Sidebar */}
+      
         <div className="sidebar">
           <h3>Brand</h3>
 
@@ -73,7 +71,7 @@ const Fridgepage = () => {
           ))}
         </div>
 
-        {/* Products */}
+      
         <div className="pageSection">
           {filteredFridges.length === 0 && (
             <p>No fridge products found.</p>
@@ -98,12 +96,12 @@ const Fridgepage = () => {
                 <strong>Model:</strong> {item.model}
               </div>
 
-              {/* Rating */}
+            
               <div className="itemRating">
                 {[...Array(5)].map((_, i) => (
                   <img
                     key={i}
-                    src={i < (item.rating || 0) ? star : star_dull_icon}
+                    src={i < (item.rating || 0) ? star : star_icon}
                     alt="star"
                   />
                 ))}

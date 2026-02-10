@@ -7,26 +7,26 @@ import star_icon from "../../assets/star_icon.png";
 
 const normalize = (str) => str?.replace(/\s+/g, "").toLowerCase();
 
-const Makeup = () => {
+const Kidswear = () => {
   const { allProduct = [], addToCart, url } = useCart();
 
-  // Filter Makeup products
-  const makeupProducts = useMemo(() => {
+ 
+  const kidswearProducts = useMemo(() => {
     return allProduct
-      .filter((item) => normalize(item.category) === "makeup")
+      .filter((item) => normalize(item.category) === "kidswear")
       .slice(0, 12);
   }, [allProduct]);
 
   return (
     <div className="Container">
-      {makeupProducts.length === 0 && (
-        <p className="noProducts">No makeup products found.</p>
+      {kidswearProducts.length === 0 && (
+        <p className="noProducts">No kidswear products found.</p>
       )}
 
       <div className="productsGrid">
-        {makeupProducts.map((item) => (
+        {kidswearProducts.map((item) => (
           <div key={item._id || item.id} className="productCard">
-            <Link to={`/makeup/${item._id || item.id}`}>
+            <Link to={`/kidswear/${item._id || item.id}`}>
               <div className="productImageBox">
                 <img
                   loading="lazy"
@@ -35,7 +35,7 @@ const Makeup = () => {
                       ? `${url}/images/${encodeURIComponent(item.image)}`
                       : "/placeholder.png"
                   }
-                  alt={item.model || item.product || "Makeup"}
+                  alt={item.model || item.product || "Kids Wear"}
                   onError={(e) => {
                     e.target.src = "/placeholder.png";
                   }}
@@ -43,10 +43,9 @@ const Makeup = () => {
               </div>
             </Link>
 
-            {/* 🔁 type instead of productCategory */}
-             <div className="producttype">
-               
-                <strong>type:</strong> {item.type}
+           
+              <div className="itemModel">
+                <strong>Model:</strong> {item.model}
               </div>
 
 
@@ -54,13 +53,12 @@ const Makeup = () => {
               {[...Array(5)].map((_, i) => (
                 <img
                   key={i}
-                  src={i < (Number(item.rating) || 0) ? star :star_icon}
+                  src={i < (Number(item.rating) || 0) ? star : star_icon}
                   alt="star"
                 />
               ))}
             </div>
-
-             <div className="itemPrice">
+  <div className="itemPrice">
                 <strong>Price:</strong> ₹{item.price}
               </div>
 
@@ -68,7 +66,7 @@ const Makeup = () => {
               <div className="itemDescription">
                 <strong>Description:</strong> {item.description}
               </div>
-         
+
             <button
               className="addToCartBtn"
               onClick={() => addToCart(item)}
@@ -83,4 +81,4 @@ const Makeup = () => {
   );
 };
 
-export default Makeup;
+export default Kidswear;

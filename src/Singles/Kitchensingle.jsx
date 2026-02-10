@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import star from "../assets/star_icon.png";
-import star_dull_icon from "../assets/star_dull_icon.png";
+import star_icon from "../assets/star_icon.png";
+ import star_dull_icon from "../assets/star_dull_icon.png";
 import { useCart } from "../Components/CartContext.jsx";
 
 const Kitchensingle = () => {
@@ -12,9 +12,7 @@ const Kitchensingle = () => {
   const [loading, setLoading] = useState(true);
   const [mainImg, setMainImg] = useState("/placeholder.png");
 
-  /* =========================
-     FIND KITCHEN PRODUCT
-  ========================= */
+ 
   useEffect(() => {
     if (allProduct.length > 0) {
       const foundProduct = allProduct.find(
@@ -35,22 +33,18 @@ const Kitchensingle = () => {
     }
   }, [allProduct, id, url]);
 
-  /* =========================
-     STATES
-  ========================= */
+  
   if (loading) return <h2 style={{ padding: "40px" }}>Loading Kitchen...</h2>;
   if (!product) return <h2 style={{ padding: "40px" }}>Product Not Found</h2>;
 
-  /* =========================
-     IMAGE LIST
-  ========================= */
+
   const images = product.images?.length
     ? product.images.map((img) => `${url}/images/${encodeURIComponent(img)}`)
     : [mainImg, mainImg, mainImg, mainImg];
 
   return (
     <div className="productdisplay">
-      {/* LEFT */}
+     
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
           {images.map((img, index) => (
@@ -73,7 +67,6 @@ const Kitchensingle = () => {
         </div>
       </div>
 
-      {/* RIGHT */}
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
  <div className="productdisplay-short-description">{product.description}</div>

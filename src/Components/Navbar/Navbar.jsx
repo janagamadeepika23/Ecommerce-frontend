@@ -27,7 +27,7 @@ const Navbar = ({ setShowlogin }) => {
   const cartCount = cartItems ? cartItems.length : 0;
 
   return (
-    <div className="nav">
+    <>
       <div className="navSection">
       
         <div className="navbar-left">
@@ -101,7 +101,7 @@ const Navbar = ({ setShowlogin }) => {
           <Link to="/books"><li>Books</li></Link>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

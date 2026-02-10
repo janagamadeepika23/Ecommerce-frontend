@@ -46,7 +46,7 @@ const kidsWearData = [
     id: 4,
     category: "Kids Wear",
     type: "Jeans",
-    model: "Denim Jeans",
+    model: "Jeans",
     price: 899,
     
     description: "Comfortable denim jeans for daily wear",
@@ -58,7 +58,7 @@ const kidsWearData = [
     id: 5,
     category: "Kids Wear",
     type: "Set",
-    model: "Top & Shorts Set",
+    model: " Kid Set",
     price: 999,
     rating: 5,
     description: "Colorful top and shorts combo set",

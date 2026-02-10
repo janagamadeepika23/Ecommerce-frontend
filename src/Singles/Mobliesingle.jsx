@@ -20,7 +20,7 @@ const Mobilesingle = () => {
       if (found) {
         setProduct(found);
 
-        // first image default
+    
         if (found.images?.length > 0) {
           setMainImg(`${url}/images/${found.images[0]}`);
         } else {
@@ -46,7 +46,7 @@ const Mobilesingle = () => {
 
   return (
     <div className="mobile-single">
-      {/* LEFT SMALL IMAGES */}
+    
       <div className="mobile-thumbs">
         {images.map((img, index) => (
           <img
@@ -59,12 +59,12 @@ const Mobilesingle = () => {
         ))}
       </div>
 
-      {/* MAIN IMAGE */}
+  
       <div className="mobile-main-img">
         <img src={mainImg} alt={product.name} />
       </div>
 
-      {/* RIGHT DETAILS */}
+ 
       <div className="mobile-details">
         <h1>{product.name}</h1>
 <div className="productdisplay-short-description">{product.description}</div>

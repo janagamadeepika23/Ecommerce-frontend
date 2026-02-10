@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../Components/CartContext.jsx";
 
-import star from "../assets/star_icon.png";
-import star_dull_icon from "../assets/star_dull_icon.png";
+import star_icon from "../assets/star_icon.png";
+// import star_dull_icon from "../assets/star_dull_icon.png";
 
 const ACsingle = () => {
   const { id } = useParams();
@@ -37,9 +37,9 @@ const ACsingle = () => {
 
   return (
     <>
-      {/* LEFT + RIGHT layout like Booksingle */}
+     
       <div className="productdisplay">
-        {/* LEFT */}
+       
         <div className="productdisplay-left">
           <div className="productdisplay-img-list">
             {images.slice(0, 4).map((img, i) => (
@@ -62,15 +62,15 @@ const ACsingle = () => {
           </div>
         </div>
 
-        {/* RIGHT */}
+     
         <div className="productdisplay-right">
-          {/* <h1>{product.model}</h1> */}
+        
 <div className="productdisplay-short-description">{product.description}</div>
           <div className="productdisplay-right-star">
             {[...Array(5)].map((_, i) => (
               <img
                 key={i}
-                src={i < (product.rating || 4) ? star : star_dull_icon}
+                src={i < (product.rating || 4) ? star : star_icon}
                 alt="star"
               />
             ))}

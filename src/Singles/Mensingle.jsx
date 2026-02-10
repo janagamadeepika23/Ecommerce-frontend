@@ -12,9 +12,8 @@ const Mensingle = () => {
   const [mainImg, setMainImg] = useState("/placeholder.png");
   const [loading, setLoading] = useState(true);
 
-  /* =========================
-     FIND MEN PRODUCT
-  ========================= */
+ 
+  
   useEffect(() => {
     if (allProduct.length > 0) {
       const foundProduct = allProduct.find(
@@ -35,22 +34,18 @@ const Mensingle = () => {
     }
   }, [id, allProduct, url]);
 
-  /* =========================
-     LOADING / NOT FOUND
-  ========================= */
+ 
   if (loading) return <h2 style={{ padding: "40px" }}>Loading Product...</h2>;
   if (!product) return <h2 style={{ padding: "40px" }}>Product Not Found</h2>;
 
-  /* =========================
-     IMAGE LIST
-  ========================= */
+ 
   const images = product.images?.length
     ? product.images.map((img) => `${url}/images/${encodeURIComponent(img)}`)
     : [mainImg, mainImg, mainImg, mainImg];
 
   return (
     <div className="productdisplay">
-      {/* LEFT SIDE */}
+     
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
           {images.map((img, index) => (
@@ -73,7 +68,7 @@ const Mensingle = () => {
         </div>
       </div>
 
-      {/* RIGHT SIDE */}
+     
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
   <div className="productdisplay-short-description">{product.description}</div>

@@ -82,7 +82,7 @@ const Menpage = () => {
           )}
         </div>
 
-        {/* Products */}
+   
         <div className="pageSection">
           {filteredMen.length === 0 && <p>No men products found.</p>}
 

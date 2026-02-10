@@ -12,15 +12,13 @@ const Tvsingle = () => {
   const [loading, setLoading] = useState(true);
   const [mainImg, setMainImg] = useState("/placeholder.png");
 
-  /* =========================
-     FIND TV FROM allProduct
-  ========================= */
+  
   useEffect(() => {
     if (allProduct.length > 0) {
       const foundProduct = allProduct.find(
         (item) =>
           item._id.toString() === id.toString() &&
-          item.category?.toLowerCase().includes("tv") // ✅ changed from "speaker" to "tv"
+          item.category?.toLowerCase().includes("tv") 
       );
 
       setProduct(foundProduct);
@@ -35,19 +33,12 @@ const Tvsingle = () => {
     }
   }, [allProduct, id, url]);
 
-  /* =========================
-     LOADING STATE
-  ========================= */
+
   if (loading) return <h2 style={{ padding: "40px" }}>Loading TV...</h2>;
 
-  /* =========================
-     PRODUCT NOT FOUND
-  ========================= */
+ 
   if (!product) return <h2 style={{ padding: "40px" }}>Product Not Found</h2>;
 
-  /* =========================
-     IMAGE LIST (SAFE)
-  ========================= */
   const images = product.images?.length
     ? product.images.map((img) => `${url}/images/${encodeURIComponent(img)}`)
     : [mainImg, mainImg, mainImg, mainImg];
@@ -73,7 +64,7 @@ const Tvsingle = () => {
         </div>
       </div>
 
-      {/* RIGHT SIDE */}
+      
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
 
