@@ -1,0 +1,83 @@
+.explore-more {
+    display: flex;
+flex-direction: column;
+ 
+  gap: 6px;        
+align-items: center;
+color: red;
+    margin-top: 10px;
+    padding-top: 10px;
+     border-bottom: 2px solid red;
+
+}
+
+
+.explore-more h1 {
+    color: black;
+    font-weight: 400;
+    margin-top: 0; 
+    padding-top: 0;
+height: 23px;
+}
+
+.paraExplore-more  {
+    max-width: 50%;
+    padding-top: 15px;
+    color: red;
+ 
+
+
+     
+}
+
+.explore-more-list {
+    display: flex;
+
+    align-items: center;
+    gap: 55px;
+    text-align: center;
+    margin: 10px 0;
+    overflow-x: scroll;
+    padding-right: 20px;
+    
+}
+
+.explore-more-list::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-more-list-item img {
+    width: 7.5vw;
+    min-width: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.2s;
+    height: 99px;
+}
+
+.explore-more-list-item p {
+    margin-top: 10px;
+    color: black;
+    font-size: 17px;
+    cursor: pointer;
+}
+.explore-more-list-item p:hover{
+    color: red;
+     border-bottom: 1.3px solid black;
+  font-weight: bold;
+ 
+
+}
+.explore-more-list-item img:hover{
+     border: 3.5px solid orange;
+    border-radius: 50%;
+    width: 120px;
+    height: 130px;
+}
+
+@media screen and (max-width:1050px) {
+    .paraExplore-more {
+        max-width: 100%;
+        font-size: 14px;
+    }
+}
