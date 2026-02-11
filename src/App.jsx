@@ -35,15 +35,15 @@ import Footer from './Components/Footer/Footer.jsx';
 import SigninPopup from './Components/Login/Login.jsx';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import Orders from './Components/Order/Order.jsx';
- import BodyLotion from './Components/Eplore/BodyLotion.jsx';
-import Womenwear from './Components/Eplore/womenwear.jsx';
-import HomeDecor from './Components/Eplore/Home decor.jsx';
-import StudyTable from './Components/Eplore/studytable.jsx';
-import Menswear from './Components/Eplore/Menswear.jsx';
-import Jewellery from './Components/Eplore/Jewellery.jsx';
-import Footwear from './Components/Eplore/Footwear.jsx';
-import Makeup from './Components/Eplore/Makeup.jsx';
-import Kidswear from './Components/Eplore/Kidswear.jsx';
+ import BodyLotion from './Components/Explore/BodyLotion.jsx';
+import Womenwear from './Components/Explore/womenwear.jsx';
+import HomeDecor from './Components/Explore/Home decor.jsx';
+import StudyTable from './Components/Explore/studytable.jsx';
+import Menswear from './Components/Explore/Menswear.jsx';
+import Jewellery from './Components/Explore/Jewellery.jsx';
+import Footwear from './Components/Explore/Footwear.jsx';
+import Makeup from './Components/Explore/Makeup.jsx';
+import Kidswear from './Components/Explore/Kidswear.jsx';
 
 const App = () => {
   const [showLogin, setShowlogin] = useState(false);
