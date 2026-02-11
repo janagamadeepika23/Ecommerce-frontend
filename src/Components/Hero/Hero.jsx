@@ -4,7 +4,7 @@ import bag_banner from "../../assets/bag_banner.png";
 import toys_banner from "../../assets/toys_banner.png";
 import saree_banner from "../../assets/saree_banner.png";
 import wallet_banner from "../../assets/wallet_banner.png";
-import ExploreMore from "../EploreMore/ExploreMore";
+import ExploreMore from "../ExploreMore/ExploreMore";
 import "./Hero.css";
 import AppDownload from "../AppDownload/AppDownload";
 import Bag from "../Store/bag";
