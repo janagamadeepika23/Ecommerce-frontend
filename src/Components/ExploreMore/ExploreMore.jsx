@@ -28,7 +28,7 @@ const ExploreMore = () => {
           <Link
             key={item._id || index}
             to={categoryRoutes[item.product] || "/"}
-            className="explore-m ore-list-item"
+            className="explore-more-list-item"
           >
             <img src={item.image} alt={item.product} />
             <p>{item.product}</p>
