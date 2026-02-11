@@ -8,7 +8,7 @@ import MenPage from './Pages/MenPage.jsx';
 import WomanPage from './Pages/Womanpage.jsx';
  import WatchPage from './Pages/Watchpage.jsx';
 import FurniturePage from './Pages/FurniturePage.jsx';
-import AcPage from './Pages/AcPage.jsx';
+import AcPage from './Pages/Acpage.jsx';
 import Kitchenpage from './Pages/kitchenpage.jsx';
 import Fridgepage from './Pages/Fridgepage.jsx';
 import Speakerpage from './Pages/Speakerpage.jsx';
