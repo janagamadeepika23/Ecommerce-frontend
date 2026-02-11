@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useCart } from "../Components/CartContext.jsx";
 
 import star_icon from "../assets/star_icon.png";
-// import star_dull_icon from "../assets/star_dull_icon.png";
+ import star_dull_icon from "../assets/star_dull_icon.png";
 
 const ACsingle = () => {
   const { id } = useParams();
@@ -66,16 +66,16 @@ const ACsingle = () => {
         <div className="productdisplay-right">
         
 <div className="productdisplay-short-description">{product.description}</div>
-          <div className="productdisplay-right-star">
-            {[...Array(5)].map((_, i) => (
-              <img
-                key={i}
-                src={i < (product.rating || 4) ? star : star_icon}
-                alt="star"
-              />
-            ))}
-            <span>({product.reviews || 120})</span>
-          </div>
+         <div className="productdisplay-right-star">
+  {[...Array(5)].map((_, i) => (
+    <img
+      key={i}
+      src={i < (product.rating || 4) ? star_icon : star_dull_icon}
+      alt="star"
+    />
+  ))}
+  <span>({product.reviews || 120})</span>
+</div>
 
           <div className="productdisplay-right-price">
             <strong>₹{product.price}</strong>
