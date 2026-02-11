@@ -1,7 +1,7 @@
 import React from 'react'
  import './Footer.css'
 import logo_big from "../../assets/logo_big.png";
- import instagram_icon from "../../Assets/instagram.png";
+ import instagram_icon from "../../assets/instagram.png";
     import pintester_icon from "../../assets/pintester_icon.png";
   
      import whatsapp_icon from "../../assets/whatsapp_icon.png";
