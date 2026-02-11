@@ -70,16 +70,16 @@ const Kitchensingle = () => {
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
  <div className="productdisplay-short-description">{product.description}</div>
-        <div className="productdisplay-right-star">
-          {[...Array(5)].map((_, i) => (
-            <img
-              key={i}
-              src={i < (product.rating || 4) ? star : star_dull_icon}
-              alt="star"
-            />
-          ))}
-          <span>({product.reviews || 122})</span>
-        </div>
+         <div className="productdisplay-right-star">
+  {[...Array(5)].map((_, i) => (
+    <img
+      key={i}
+      src={i < (product.rating || 4) ? star_icon : star_dull_icon}
+      alt="star"
+    />
+  ))}
+  <span>({product.reviews || 120})</span>
+</div>
 
         <div className="productdisplay-right-price">
           <strong>₹{product.price}</strong>
