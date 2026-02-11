@@ -115,9 +115,13 @@
 }
 
 .bannerimage {
-  width: 98.9%;
+  width: 99.9%;
   height: 300px;
   margin: 0 auto;
+  padding-top: 10px;
+  padding-left: 7px;
+  border-radius: 20px;
+ height: 350px;
 }
 .addToCartBtn {
   background-color: #ff6f61;
