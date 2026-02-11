@@ -4,7 +4,7 @@ import { useCart } from "../Components/CartContext";
 import "./mobilepage.css";
 import watchbanner from "../assets/watchbanner.png";
 import star_icon from "../assets/star_icon.png";
-// import star_dull_icon from "../assets/star_dull_icon.png";
+ // import star_dull_icon from "../assets/star_dull_icon.png";
 
 const WatchPage = () => {
   const { allProduct = [], addToCart, url } = useCart();
