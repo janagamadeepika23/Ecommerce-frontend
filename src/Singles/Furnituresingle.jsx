@@ -23,7 +23,7 @@ const Furnituresingle = () => {
 
       setMainImg(
         foundBook?.image
-          ? `${url}/images/${encodeURIComponent(foundBook.image)}`
+          ? `${url}/images/${encodeURIComponent(foundfurniture.image)}`
           : "/placeholder.png"
       );
 
@@ -80,16 +80,18 @@ const Furnituresingle = () => {
           {product.description}
         </div>
 
-        <div className="productdisplay-right-star">
-          {[...Array(5)].map((_, i) => (
-            <img
-              key={i}
-              src={i < (product.rating || 4) ? star : star_icon}
-              alt="star"
-            />
-          ))}
-          <span>({product.reviews || 122})</span>
-        </div>
+      <div className="productdisplay-right-star">
+        
+  {[...Array(5)].map((_, i) => (
+    <img
+      key={i}
+      src={i < (product.rating || 4) ? star_icon : star_dull_icon}
+      alt="star"
+    />
+  ))}
+ 
+    <span>({product.reviews || 120})</span>
+  </div>
 
         <div className="productdisplay-right-price">
           <strong>₹{product.price}</strong>
