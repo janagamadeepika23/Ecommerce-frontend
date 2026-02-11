@@ -9,7 +9,7 @@ import WomanPage from './Pages/Womanpage.jsx';
  import WatchPage from './Pages/Watchpage.jsx';
 import FurniturePage from './Pages/FurniturePage.jsx';
 import AcPage from './Pages/Acpage.jsx';
-import Kitchenpage from './Pages/kitchenpage.jsx';
+import Kitchenpage from './Pages/Kitchenpage.jsx';
 import Fridgepage from './Pages/Fridgepage.jsx';
 import Speakerpage from './Pages/Speakerpage.jsx';
 import Tvpage from './Pages/Tvpage.jsx';
@@ -44,6 +44,7 @@ import Jewellery from './Components/Explore/Jewellery.jsx';
 import Footwear from './Components/Explore/Footwear.jsx';
 import Makeup from './Components/Explore/Makeup.jsx';
 import Kidswear from './Components/Explore/Kidswear.jsx';
+
 
 const App = () => {
   const [showLogin, setShowlogin] = useState(false);
