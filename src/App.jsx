@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
-import MobilePage from './Pages/MobilePage.jsx';
-import ComputerPage from './Pages/ComputerPage.jsx';
-import MenPage from './Pages/MenPage.jsx';
+import MobilePage from './Pages/mobilepage.jsx';
+import ComputerPage from './Pages/Computerpage.jsx';
+import MenPage from './Pages/Menpage.jsx';
 import WomanPage from './Pages/Womanpage.jsx';
  import WatchPage from './Pages/Watchpage.jsx';
 import FurniturePage from './Pages/Furniturepage.jsx';
