@@ -83,7 +83,7 @@ const WomenPage = () => {
           ) : (
             filteredWomen.map((item) => (
               <div key={item._id || item.id} className="mobileCard">
-                <Link to={`/womenwear/${item._id || item.id}`}>
+                <Link to={`/woman/${item._id || item.id}`}>
                   <div className="itemImageBox">
                     <img
                       src={
