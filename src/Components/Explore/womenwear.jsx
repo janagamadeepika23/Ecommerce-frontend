@@ -37,7 +37,7 @@ const Womenwear = () => {
         {womenwearData.map((item) => (
           <div className="productCard" key={item._id || item.id}>
          
-            <Link to={`/womenwear/${item._id || item.id}`}>
+            <Link to={`/womenwear}`}>
               <div className="productImageBox">
                 <img
                   src={
