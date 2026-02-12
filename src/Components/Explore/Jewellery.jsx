@@ -26,7 +26,7 @@ const Jewellery = () => {
       <div className="productsGrid">
         {jewelleryProducts.map((item) => (
           <div key={item._id || item.id} className="productCard">
-            <Link to={`/jewellery/${item._id || item.id}`}>
+            <Link to={`/jewellery`}>
               <div className="productImageBox">
                 <img
                   loading="lazy"
