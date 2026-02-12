@@ -30,7 +30,7 @@ const Footwear = () => {
 
           return (
             <div key={productId} className="productCard">
-              <Link to={`/${productId}`}>
+              <Link to={`/footwear`}>
                 <div className="productImageBox">
                   <img
                     loading="lazy"
