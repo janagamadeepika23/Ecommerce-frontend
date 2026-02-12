@@ -8,20 +8,21 @@ export const CartProvider = ({ children }) => {
 
   const [allProduct, setAllProduct] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [token, setToken] = useState("");
-
-  useEffect(() => {
-    const savedToken = localStorage.getItem("token");
-    if (savedToken) setToken(savedToken);
-  }, []);
-
  
-  useEffect(() => {
-    if (token) {
-      localStorage.setItem("token", token);
-    }
-  }, [token]);
+ const [token, setToken] = useState(
+  localStorage.getItem("token") || ""
+);
 
+
+useEffect(() => {
+  if (token) {
+    localStorage.setItem("token", token);
+  } else {
+    localStorage.removeItem("token");   
+    setCartItems([]);                  
+  }
+}, [token]);
+  
   
   useEffect(() => {
     const fetchProducts = async () => {
