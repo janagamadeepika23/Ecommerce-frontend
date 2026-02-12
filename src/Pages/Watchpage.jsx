@@ -56,11 +56,7 @@ const WatchPage = () => {
             </label>
           ))}
 
-          {selectedModel.length > 0 && (
-            <button className="clearBtn" onClick={() => setSelectedModel([])}>
-              Clear All
-            </button>
-          )}
+        
         </div>
 
  
