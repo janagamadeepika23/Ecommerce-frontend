@@ -30,7 +30,7 @@ const HomeDecor = () => {
         {homeDecorProducts.map((item) => (
           <div className="productCard" key={item._id}>
 
-            <Link to={`/homedecor/${item._id}`}>
+            <Link to={`/homedecor`}>
               <div className="productImageBox">
                 <img
                   src={
