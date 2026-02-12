@@ -32,7 +32,7 @@ const StudyTable = () => {
         {studyTableProducts.map((item) => (
           <div key={item._id || item.id} className="productCard">
 
-            <Link to={`/studytable/${item._id || item.id}`}>
+            <Link to={`/studytable`}>
               <div className="productImageBox">
                 <img
                   src={
