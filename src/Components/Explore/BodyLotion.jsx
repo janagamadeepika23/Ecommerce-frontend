@@ -29,7 +29,7 @@ const BodyLotion = () => {
         {bodyLotionProducts.map((item) => (
           <div key={item._id} className="productCard">
 
-            <Link to={`/bodylotion/${item._id}`}>
+            <Link to={`/bodylotion`}>
               <div className="productImageBox">
                 <img
                   src={
