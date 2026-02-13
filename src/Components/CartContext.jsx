@@ -4,7 +4,7 @@ import axios from "axios";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
- const url = "https://ecommerce-backend-by18.onrender.com";
+ const url = "http://localhost:4000";
 
   const [allProduct, setAllProduct] = useState([]);
   const [cartItems, setCartItems] = useState([]);
